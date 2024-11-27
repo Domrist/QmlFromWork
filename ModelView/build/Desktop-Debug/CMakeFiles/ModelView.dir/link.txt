@@ -1,0 +1,1 @@
+/usr/bin/g++ -fPIC -DQT_QML_DEBUG -g -shared -Wl,-soname,libModelView.so -o libModelView.so CMakeFiles/ModelView.dir/Model.cpp.o CMakeFiles/ModelView.dir/View.cpp.o
