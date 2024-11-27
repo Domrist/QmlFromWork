@@ -22,83 +22,50 @@ Window {
     Column{
         id: col
 
-        Item {
-
-            id : wOneItem
-
-            width: 100
-            height: 100
+        WidgetItem{
+            id: newWidgetOne
+            widgetBackgroundColor: "#00FF00"
+            isVisible: wOne.isVisible
 
             WidgetOne{
-                id : wOne
+                id: wOne
             }
 
-            Rectangle{
-                anchors.fill: parent
-                color: "#FF00FF"
-            }
+            func: wOne.setIsVisible
 
-            Item {
-                id: wOneItemContent
+            Column{
+                id:contentSectionOne
                 anchors.fill: parent
+                // next we set content
                 Text {
-                    id: wOneItemContentText
-                    anchors.fill : parent
-                    text: qsTr("WOneWidget")
+                    id: nameOne
+                    text: qsTr("aaaasa")
+                    anchors.horizontalCenter: parent.horizontalCenter
                 }
-
-                visible: wOne.isVisible
-            }
-
-            CheckBox{
-                id : wOneContentVisible
-
-                anchors.left: parent.left
-                anchors.top: parent.topt
-
-                nextCheckState : {
-                    wOne.setIsVisible(checked)
-                }
+                visible: parent.isVisible
             }
         }
 
-
-        Item {
-
-            id : wTwoItem
-
-            width: 100
-            height: 100
+        WidgetItem{
+            id: newWidgetTwo
+            widgetBackgroundColor: "#0000F0"
+            isVisible: wTwo.isVisible
 
             WidgetTwo{
-                id : wTwo
+                id: wTwo
             }
 
-            Rectangle{
-                anchors.fill: parent
-                color: "#FF0000"
-            }
+            func: wTwo.setIsVisible
 
-            Item {
-                id: wTwoItemContent
+            Column{
+                id:contentSection
                 anchors.fill: parent
+                visible: parent.isVisible
+                // next we set content
                 Text {
-                    id: wTwoItemContentText
-                    anchors.fill : parent
-                    text: qsTr("WTwoidget ") + wTwo.aZPos
-                }
-
-                visible: wTwo.isVisible
-            }
-
-            CheckBox{
-                id : wTwoContentVisible
-
-                anchors.left: parent.left
-                anchors.top: parent.topt
-
-                nextCheckState : {
-                    wTwo.setIsVisible(checked)
+                    id: name
+                    text: qsTr("xxx") + wTwo.aZPos
+                    anchors.horizontalCenter: parent.horizontalCenter
                 }
             }
         }
