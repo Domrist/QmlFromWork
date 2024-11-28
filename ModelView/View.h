@@ -19,13 +19,16 @@ public:
 
 	void updateView();
 
-	void updateModelReques(); // request to _presenter to swap data from ui to model
+	void updateModelRequest(); // request to _presenter to swap data from ui to model
 
 	void setPresenter(Presenter * presenter);
 
 	void addWidgetToQml(std::string a_newElement);
 
 	QQmlApplicationEngine & getEngine();
+
+	QQmlEngine & getSimpleEngine();
+	QQmlApplicationEngine & getQmlApplicationEngine();
 
 private:
 

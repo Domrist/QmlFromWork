@@ -18,6 +18,8 @@ public:
 
 	void setFieldValue(QString a_fieldName, QVariant a_valueToSet);
 
+	void startChange();
+
 private:
 
 	QJsonObject _jsonObject;

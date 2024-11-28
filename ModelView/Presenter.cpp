@@ -4,6 +4,7 @@
 
 #include "BaseWidget.h"
 
+
 Presenter::Presenter(QObject * parent)
 	: QObject(parent)
 {
@@ -55,4 +56,16 @@ void Presenter::updateView()
 	{
 
 	}
+}
+
+
+
+Presenter* Presenter::instance()
+{
+	if (_instance == nullptr)
+	{
+		_instance = new Presenter();
+	}
+
+	return _instance;
 }

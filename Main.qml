@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 
 import QmlWidget
+
 import QtQuick.Controls
 
 Window {
@@ -19,58 +20,24 @@ Window {
         }
     }
 
-    Column{
-        id: col
-
-        WidgetItem{
-            id: newWidgetOne
-            widgetBackgroundColor: "#00FF00"
-            isVisible: wOne.isVisible
-
-            WidgetOne{
-                id: wOne
-            }
-
-            func: wOne.setIsVisible
-
-            Column{
-                id:contentSectionOne
-                anchors.fill: parent
-                // next we set content
-                Text {
-                    id: nameOne
-                    text: qsTr("aaaasa")
-                    anchors.horizontalCenter: parent.horizontalCenter
-                }
-                visible: parent.isVisible
-            }
-        }
-
-        WidgetItem{
-            id: newWidgetTwo
-            widgetBackgroundColor: "#0000F0"
-            isVisible: wTwo.isVisible
-
-            WidgetTwo{
-                id: wTwo
-            }
-
-            func: wTwo.setIsVisible
-
-            Column{
-                id:contentSection
-                anchors.fill: parent
-                visible: parent.isVisible
-                // next we set content
-                Text {
-                    id: name
-                    text: qsTr("xxx") + wTwo.aZPos
-                    anchors.horizontalCenter: parent.horizontalCenter
-                }
-            }
-        }
-
+    ObjModel{
+        id : objModel
     }
 
+    ListView {
+        anchors.fill: parent
+        anchors.margins: 10
+        spacing: 5
+        model: objModel
 
+        delegate: Rectangle{
+            width: 100
+            height: 100
+            color: "#FF00F0"
+            CheckBox{
+                anchors.right: parent.right
+                anchors.top: parent.top
+            }
+        }
+    }
 }

@@ -37,3 +37,11 @@ void Model::setFieldValue(QString a_fieldName, QVariant a_valueToSet)
 
 	// _jsonObject[a_fieldName].toObject().value( = a_valueToSet;
 }
+
+
+
+void Model::startChange()
+{
+
+
+}

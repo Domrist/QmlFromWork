@@ -26,7 +26,7 @@ void View::updateView()
 
 
 
-void View::updateModelReques()
+void View::updateModelRequest()
 {
 	qDebug() << "View::UpdateModel";
 }
@@ -51,4 +51,21 @@ QQmlApplicationEngine & View::getEngine()
 {
 	return _engine;
 }
+
+
+
+
+QQmlEngine & View::getSimpleEngine()
+{
+	return _engine;
+}
+
+
+
+QQmlApplicationEngine & View::getQmlApplicationEngine()
+{
+	return _engine;
+}
+
+
 

@@ -7,8 +7,9 @@
 #include "Widgets/Initializer.h"
 
 #include <QQmlComponent> // TO DELETE
-#include <thread>
+
 #include <QDebug>
+#include <QVector3D>
 
 
 int main(int argc, char *argv[])
@@ -21,7 +22,6 @@ int main(int argc, char *argv[])
 
 	Model model;
 	View view;
-	Presenter presenter;
 
 	QObject::connect( &view.getEngine(), &QQmlApplicationEngine::objectCreationFailed,
 					 &app, []() { QCoreApplication::exit(-1); },
@@ -29,38 +29,38 @@ int main(int argc, char *argv[])
 
 	view.getEngine().loadFromModule("QmlTest/", "Main");
 
+	//qDebug() << "WIND SIZE\t" << obj->findChild<QObject*>("col")->children().size();
 
-	std::thread tt = std::thread([&](){
+	// 	std::this_thread::sleep_for(std::chrono::milliseconds(2500));
+	// 	QQmlEngine engine;
 
-		std::this_thread::sleep_for(std::chrono::milliseconds(2500));
-		QQmlEngine engine;
+	// 		qDebug() << QUrl::fromLocalFile("./MyItem.qml").isLocalFile();
+	// 		qDebug() << QUrl::fromLocalFile("./MyItem.qml");
+	// 	 QQmlComponent component(&engine,QUrl::fromLocalFile("MyItem.qml"));
+	// 	 QObject *object = component.create();
 
-			qDebug() << QUrl::fromLocalFile("./MyItem.qml").isLocalFile();
-			qDebug() << QUrl::fromLocalFile("./MyItem.qml");
-		 QQmlComponent component(&engine,QUrl::fromLocalFile("MyItem.qml"));
-		 QObject *object = component.create();
+	// 	 QString returnedValue;
+	// 	 QString msg = "Hello from C++";
+	// 	 QMetaObject::invokeMethod(object, "myQmlFunction",
+	// 			 Q_RETURN_ARG(QString, returnedValue),
+	// 			 Q_ARG(QString, msg));
 
-		 QString returnedValue;
-		 QString msg = "Hello from C++";
-		 QMetaObject::invokeMethod(object, "myQmlFunction",
-				 Q_RETURN_ARG(QString, returnedValue),
-				 Q_ARG(QString, msg));
+	// 	 qDebug() << "QML function returned:" << returnedValue;
+	// 	 delete object;
 
-		 qDebug() << "QML function returned:" << returnedValue;
-		 delete object;
-
-		});
+	// 	});
 
 
 	{	// initialization block
-		presenter.initialize(&model, &view);
-		view.setPresenter(&presenter);
-		model.setPresenter(&presenter);
+		Presenter::instance()->initialize(&model, &view);
+		view.setPresenter(Presenter::instance());
+		model.setPresenter(Presenter::instance());
 
 		// presenter.addWidget(new WidgetOne);
 		// presenter.addWidget(new WidgetTwo);
 	}
 
+	model.startChange();
 
 	return app.exec();
 }

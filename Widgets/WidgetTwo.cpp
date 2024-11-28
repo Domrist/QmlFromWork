@@ -2,10 +2,20 @@
 #include <QDebug>
 
 
+#include <thread>
+#include "../ModelView/Presenter.h"
+
+
 WidgetTwo::WidgetTwo(QObject * parent)
 	: BaseWidget(parent)
 {
 	createQmlObject();
+	std::thread t = std::thread([this](){
+		std::this_thread::sleep_for(std::chrono::milliseconds(5000));
+		setaZPos(1000);
+	});
+
+	t.detach();
 }
 
 

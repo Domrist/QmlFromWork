@@ -31,4 +31,5 @@ add_library(${PROJECT_NAME} STATIC ${SRC} ${HDR})
 target_link_libraries(${PROJECT_NAME}
 	Qt6::Core
 	Qt6::Qml
+	Qt6::Gui
 )

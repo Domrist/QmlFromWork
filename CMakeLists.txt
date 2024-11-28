@@ -10,7 +10,6 @@ add_subdirectory(Widgets)
 add_subdirectory(ModelView)
 
 
-
 file(GLOB CIPER "Widgets/*.cpp")
 file(GLOB HIPER "Widgets/*.h")
 
@@ -25,6 +24,8 @@ set(HDR
 
 set(QML
 	Main.qml
+	WidgetItem.qml
+	ObjModel.qml
 )
 
 qt_standard_project_setup(REQUIRES 6.5)

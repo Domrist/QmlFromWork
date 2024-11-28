@@ -27,19 +27,7 @@ Item {
         anchors.top: parent.topt
 
         nextCheckState : {
-            func(checked)
+            parent.func(checked)
         }
     }
-
-    // Item {
-    //     // id: wTwoItemContent
-    //     anchors.fill: parent
-    //     Text {
-    //         id: wTwoItemContentText
-    //         anchors.fill : parent
-    //         text: qsTr("WTwoidget ") + wTwo.aZPos
-    //     }
-
-    //     visible: wTwo.isVisible
-    // }
 }
