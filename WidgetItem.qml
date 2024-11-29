@@ -9,25 +9,39 @@ Item {
 
     id : widgetItem
 
-    width: 100
+    width: 300
     height: 100
 
     property var func: none
     property color widgetBackgroundColor: "#FF0000"
     property bool isVisible: true
+    property string widgetName : ""
+
 
     Rectangle{
         anchors.fill: parent
         color: widgetBackgroundColor
     }
 
-    CheckBox{
+    Row{
+
+        width: parent.width
 
         anchors.left: parent.left
         anchors.top: parent.topt
 
-        nextCheckState : {
-            parent.func(checked)
+        CheckBox{
+
+            anchors.verticalCenter: parent.verticalCenter
+
+            nextCheckState : {
+                parent.parent.func(checked)
+            }
+        }
+        Text {
+            anchors.verticalCenter: parent.verticalCenter
+
+            text: parent.parent.widgetName
         }
     }
 }

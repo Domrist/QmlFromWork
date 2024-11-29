@@ -5,10 +5,11 @@
 #include "../ModelView/Model.h" // shieeeet
 #include "../ModelView/View.h"
 
+#include "../ModelView/Presenter.h"
+
 BaseWidget::BaseWidget(QObject * parent):
 	QObject(parent)
 {
-
 }
 
 

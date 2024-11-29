@@ -13,13 +13,6 @@ Window {
 
     id: mainWindow
 
-    Item{
-        function myQmlFunction()
-        {
-            console.log("MAIN LOG")
-        }
-    }
-
     ObjModel{
         id : objModel
     }
@@ -30,14 +23,5 @@ Window {
         spacing: 5
         model: objModel
 
-        delegate: Rectangle{
-            width: 100
-            height: 100
-            color: "#FF00F0"
-            CheckBox{
-                anchors.right: parent.right
-                anchors.top: parent.top
-            }
-        }
     }
 }

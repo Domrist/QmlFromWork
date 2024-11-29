@@ -20,6 +20,8 @@ public:
 
 	void startChange();
 
+	QJsonObject & getJsonObject();
+
 private:
 
 	QJsonObject _jsonObject;

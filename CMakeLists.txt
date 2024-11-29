@@ -57,6 +57,9 @@ qt_add_qml_module(appQmlTest
 target_include_directories(appQmlTest PUBLIC Widgets)
 target_link_directories(appQmlTest PUBLIC Widgets)
 
+target_include_directories(appQmlTest PUBLIC ModelView)
+target_link_directories(appQmlTest PUBLIC ModelView)
+
 target_link_libraries(appQmlTest PUBLIC
 	Qt6::Quick
 	# Widgets

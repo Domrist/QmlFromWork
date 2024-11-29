@@ -45,3 +45,10 @@ void Model::startChange()
 
 
 }
+
+
+
+QJsonObject & Model::getJsonObject()
+{
+	return _jsonObject;
+}

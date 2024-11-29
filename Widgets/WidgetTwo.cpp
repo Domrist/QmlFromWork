@@ -3,7 +3,8 @@
 
 
 #include <thread>
-#include "../ModelView/Presenter.h"
+// #include "../ModelView/Presenter.h"
+// #include "../ModelView/Model.h"
 
 
 WidgetTwo::WidgetTwo(QObject * parent)
@@ -11,8 +12,14 @@ WidgetTwo::WidgetTwo(QObject * parent)
 {
 	createQmlObject();
 	std::thread t = std::thread([this](){
-		std::this_thread::sleep_for(std::chrono::milliseconds(5000));
-		setaZPos(1000);
+
+		char s = 0;
+		while(true)
+		{
+			setaZPos(++s);
+			std::this_thread::sleep_for(std::chrono::milliseconds(50));
+		}
+
 	});
 
 	t.detach();
@@ -45,6 +52,13 @@ void WidgetTwo::setaZPos(float newValue)
 void WidgetTwo::writeToModel(Model * a_model)
 {
 	qDebug() << "WidgetTwo write data to model";
+	if (!a_model->getJsonObject().contains("zPosition"))
+	{
+		return;
+	}
+
+	a_model->getJsonObject()["zPosition"] = _zPos;
+
 }
 
 

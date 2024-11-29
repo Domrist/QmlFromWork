@@ -64,7 +64,7 @@ ObjectModel
             Row
             {
                 width: parent.width
-                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.horizontalCenter: parent.horizontalCenter   
 
                 CheckBox{
                     id: wOneRowElVisible2

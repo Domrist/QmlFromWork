@@ -4,6 +4,9 @@
 #include <qqml.h>
 #include <string>
 
+#include "../ModelView/Presenter.h"
+#include "../ModelView/Model.h"
+
 class Model;
 class View;
 

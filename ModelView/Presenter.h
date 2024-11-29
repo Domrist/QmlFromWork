@@ -15,8 +15,6 @@ public:
 
 	void initialize(Model * a_model, View * a_view);
 
-
-
 	void addWidget(BaseWidget * a_newWidget);
 
 	void updateModel(); // view -> presenter -> model

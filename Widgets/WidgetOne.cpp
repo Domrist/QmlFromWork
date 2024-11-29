@@ -34,6 +34,7 @@ void WidgetOne::update()
 void WidgetOne::writeToModel(Model * a_model)
 {
 	qDebug() << "WidgetOnd write data to model";
+
 }
 
 
