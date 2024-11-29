@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 6.5 REQUIRED COMPONENTS Quick)
 
-add_subdirectory(Widgets)
+# add_subdirectory(Widgets)
 add_subdirectory(ModelView)
 
 
@@ -59,7 +59,7 @@ target_link_directories(appQmlTest PUBLIC Widgets)
 
 target_link_libraries(appQmlTest PUBLIC
 	Qt6::Quick
-	Widgets
+	# Widgets
 	ModelView
 	Qt6::Core
 )

@@ -20,7 +20,7 @@ add_library(${PROJECT_NAME} SHARED ${SRC} ${HDR})
 
 target_link_libraries(${PROJECT_NAME}
 	Qt6::Core
-	Widgets
+	# Widgets
 	Qt6::Gui
 	Qt6::Quick
 )
