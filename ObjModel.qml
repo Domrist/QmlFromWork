@@ -4,6 +4,10 @@ import QtQuick.Controls
 
 import QmlWidget
 
+//
+// относительно недавно обнаружил что есть возможность в плюсах унаследоваться от QQuickPaintedItem и переопределить paint(QPainter * painter)
+//
+
 ObjectModel
 {
     id: widgetModel
