@@ -26,6 +26,8 @@ ObjectModel
         WidgetOne{
             id: wOne
             aName: "WidgetOne property string"
+            width: parent.width
+            height: parent.height
         }
 
         func: wOne.setIsVisible

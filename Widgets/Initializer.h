@@ -3,6 +3,8 @@
 #include "WidgetOne.h"
 #include "WidgetTwo.h"
 #include "WidgetThree.h"
+#include "Timer.h"
+#include "Clock.h"
 
 class Initializer : public QObject
 {

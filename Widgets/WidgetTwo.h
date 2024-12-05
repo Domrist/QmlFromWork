@@ -2,6 +2,7 @@
 #include <QObject>
 #include "BaseWidget.h"
 
+
 class WidgetTwo : public BaseWidget
 {
 	Q_OBJECT
@@ -9,7 +10,7 @@ class WidgetTwo : public BaseWidget
 
 // methods
 public:
-	WidgetTwo(QObject * parent = nullptr);
+	WidgetTwo(QQuickItem * parent = nullptr);
 
 	virtual void update() override;
 	virtual void writeToModel(Model * a_model) override;

@@ -23,24 +23,26 @@ Item {
         color: widgetBackgroundColor
     }
 
-    Row{
+    RowLayout{
 
         width: parent.width
 
-        anchors.left: parent.left
-        anchors.top: parent.topt
+        anchors.left: parent.anchors.left
+        anchors.top: parent.top
 
         CheckBox{
 
-            anchors.verticalCenter: parent.verticalCenter
+            Layout.alignment: Qt.AlignLeft
+            Layout.fillHeight: true
 
             nextCheckState : {
                 parent.parent.func(checked)
             }
         }
         Text {
-            anchors.verticalCenter: parent.verticalCenter
-
+            // anchors.verticalCenter: parent.anchors.verticalCenter
+            Layout.alignment: Qt.AlignLeft
+            Layout.fillHeight: true
             text: parent.parent.widgetName
         }
     }

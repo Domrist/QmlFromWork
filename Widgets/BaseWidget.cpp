@@ -7,8 +7,8 @@
 
 #include "../ModelView/Presenter.h"
 
-BaseWidget::BaseWidget(QObject * parent):
-	QObject(parent)
+BaseWidget::BaseWidget(QQuickItem * parent):
+	QQuickPaintedItem(parent)
 {
 }
 
@@ -79,4 +79,13 @@ std::string BaseWidget::createQmlObject()
 	res += "\n}";
 
 	return res;
+}
+
+
+
+void BaseWidget::paint(QPainter *painter)
+{
+	//
+
+	qDebug() << "QQQQ";
 }

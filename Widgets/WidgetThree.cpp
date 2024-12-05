@@ -2,7 +2,7 @@
 #include <QDebug>
 
 
-WidgetThree::WidgetThree(QObject * parent)
+WidgetThree::WidgetThree(QQuickItem * parent)
 	: BaseWidget(parent)
 {
 }

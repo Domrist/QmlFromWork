@@ -12,7 +12,7 @@ class WidgetThree : public BaseWidget
 	Q_PROPERTY(QVector4D rotation READ rotatoin WRITE setRotation NOTIFY rotationChanged )
 
 public:
-	WidgetThree(QObject * parent = nullptr);
+	WidgetThree(QQuickItem * parent = nullptr);
 	virtual void update() override;
 	virtual void writeToModel(Model * a_model) override;
 	virtual void udpateView(Model * a_model, View * a_view) override;

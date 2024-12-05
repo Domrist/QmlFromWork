@@ -12,6 +12,7 @@ set(SRC
 	WidgetTwo.cpp
 	WidgetThree.cpp
 	Initializer.cpp
+	Timer.cpp
 )
 
 
@@ -21,6 +22,7 @@ set(HDR
 	WidgetTwo.h
 	WidgetThree.h
 	Initializer.h
+	Timer.h
 )
 
 link_directories(${CMAKE_SOURCE_DIR}/ModelView)

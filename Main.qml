@@ -13,6 +13,14 @@ Window {
 
     id: mainWindow
 
+    // WidgetOne{
+    //     anchors.top: parent.top
+    //             anchors.topMargin: 50
+    //             anchors.horizontalCenter: parent.horizontalCenter
+    //     width: 200
+    //             height: 200
+    // }
+
     ObjModel{
         id : objModel
     }

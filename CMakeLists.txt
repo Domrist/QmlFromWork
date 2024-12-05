@@ -9,7 +9,6 @@ find_package(Qt6 6.5 REQUIRED COMPONENTS Quick)
 # add_subdirectory(Widgets)
 add_subdirectory(ModelView)
 
-
 file(GLOB CIPER "Widgets/*.cpp")
 file(GLOB HIPER "Widgets/*.h")
 

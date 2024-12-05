@@ -7,17 +7,23 @@
 // #include "../ModelView/Model.h"
 
 
-WidgetTwo::WidgetTwo(QObject * parent)
+WidgetTwo::WidgetTwo(QQuickItem * parent)
 	: BaseWidget(parent)
 {
 	createQmlObject();
 	std::thread t = std::thread([this](){
 
-		char s = 0;
+		float s = 0;
 		while(true)
 		{
-			setaZPos(++s);
+			if (s >= 360)
+			{
+				s = -1;
+			}
+			s += 1;
+			setaZPos(s);
 			std::this_thread::sleep_for(std::chrono::milliseconds(50));
+
 		}
 
 	});
